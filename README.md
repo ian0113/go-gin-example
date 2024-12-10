@@ -88,3 +88,119 @@ main.go
      關聯式資料庫 (Postgres/MySQL)
 ```
 
+---
+
+## 🐳 Docker 啟動方式
+
+專案已整合 Dockerfile 與 docker-compose.yml，可一鍵啟動 Go Gin API 與相關服務（如 Postgres、Redis）。
+
+### 使用 Docker Compose
+
+執行
+
+```
+docker compose up --build
+```
+
+<!-- ### 手動執行（不用 compose, 但你得自己建 DB/Redis, 並修改 config）
+
+建立映像
+
+```
+docker build -t go-gin-mvc .
+```
+
+執行 container
+
+```
+docker run -p 8080:8080 go-gin-mvc
+``` -->
+
+啟動完成後，你可以在瀏覽器或 Postman 訪問：
+
+```
+http://localhost:8080
+```
+
+也可以透過 curl + jq 去測試
+
+```bash
+
+### Register
+echo "* Register ========"
+res=$(
+    curl -s \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -d '
+    {
+        "name": "Test User",
+        "account": "test123",
+        "email": "test@example.com",
+        "password": "123456"
+    }
+    ' \
+    http://localhost:8080/api/users \
+)
+echo $res | jq .
+USER_ID=$(echo "$res" | jq -r '.id')
+
+### Login
+echo "* Login ========"
+res=$(curl -s \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -d '
+    {
+        "account": "test123",
+        "password": "123456"
+    }
+    ' \
+    http://localhost:8080/api/auth/login \
+)
+echo $res | jq .
+ACCESS_TOKEN=$(echo "$res" | jq -r '.access_token')
+REFRESH_TOKEN=$(echo "$res" | jq -r '.refresh_token')
+
+### Create Order
+echo "* Create Order ========"
+res=$(curl -s \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $ACCESS_TOKEN" \
+    -d "
+    {
+        \"user_id\": $USER_ID,
+        \"item\": \"Tickets\",
+        \"amount\": 100
+    }
+    " \
+    http://localhost:8080/api/orders \
+)
+echo $res | jq .
+
+### List Order
+echo "* List Order ========"
+res=$(curl -s \
+    -X GET \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $ACCESS_TOKEN" \
+    http://localhost:8080/api/orders \
+)
+echo $res | jq .
+
+### Logout
+echo "* Logout ========"
+res=$(curl -s \
+    -X POST \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer $ACCESS_TOKEN" \
+    -d "
+    {
+        \"refresh_token\": \"$REFRESH_TOKEN\"
+    }
+    " \
+    http://localhost:8080/api/auth/logout \
+)
+echo $res | jq .
+```
