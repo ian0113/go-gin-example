@@ -11,8 +11,10 @@ type SubConfigInf interface {
 }
 
 type Config struct {
-	App      AppConfig
-	Database DBConfig
+	App         AppConfig
+	Database    DBConfig
+	Redis       RedisConfig
+	AuthService AuthServiceConfig
 }
 
 func (x *Config) Restore() {

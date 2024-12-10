@@ -10,9 +10,10 @@ import (
 func init() {
 	registerApiRouter(func(rg *gin.RouterGroup) {
 		authMiddleware := middlewares.NewAuthMiddleware()
-		controller := controllers.NewUserController()
-		r := rg.Group("/users")
-		r.POST("", controller.Register)
-		r.DELETE("/:id", authMiddleware.ValidAuthStatus, controller.Unregister)
+		controller := controllers.NewAuthController()
+		r := rg.Group("/auth")
+		r.POST("/login", controller.Login)
+		r.POST("/logout", authMiddleware.ValidAuthStatus, controller.Logout)
+		r.POST("/refresh", controller.Refresh)
 	})
 }

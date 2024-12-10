@@ -17,6 +17,7 @@ func main() {
 
 	infra.InitLogger(cfg)
 	infra.InitDB(cfg)
+	infra.InitRedis(cfg)
 
 	r := gin.Default()
 	routes.SetRouters(r)
