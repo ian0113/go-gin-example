@@ -1,4 +1,4 @@
-# go-gin-mvc-example
+# go-gin-example
 
 🚀 A clean and modular MVC-style project using [Gin](https://github.com/gin-gonic/gin) framework in Go.
 
