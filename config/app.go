@@ -1,6 +1,6 @@
 package config
 
-import "github.com/ian0113/go-gin-mvc-example/utils"
+import "github.com/ian0113/go-gin-example/utils"
 
 type AppMode uint
 

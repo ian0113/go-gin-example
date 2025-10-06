@@ -1,7 +1,7 @@
 package infra
 
 import (
-	"github.com/ian0113/go-gin-mvc-example/config"
+	"github.com/ian0113/go-gin-example/config"
 
 	"go.uber.org/zap"
 )

@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/ian0113/go-gin-mvc-example/infra"
-	"github.com/ian0113/go-gin-mvc-example/services"
-	"github.com/ian0113/go-gin-mvc-example/utils"
+	"github.com/ian0113/go-gin-example/infra"
+	"github.com/ian0113/go-gin-example/services"
+	"github.com/ian0113/go-gin-example/utils"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"

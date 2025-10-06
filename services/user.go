@@ -3,10 +3,10 @@ package services
 import (
 	"fmt"
 
-	"github.com/ian0113/go-gin-mvc-example/infra"
-	"github.com/ian0113/go-gin-mvc-example/models"
-	"github.com/ian0113/go-gin-mvc-example/repositories"
-	"github.com/ian0113/go-gin-mvc-example/utils"
+	"github.com/ian0113/go-gin-example/infra"
+	"github.com/ian0113/go-gin-example/models"
+	"github.com/ian0113/go-gin-example/repositories"
+	"github.com/ian0113/go-gin-example/utils"
 
 	"go.uber.org/zap"
 )

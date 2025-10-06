@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/ian0113/go-gin-mvc-example/infra"
-	"github.com/ian0113/go-gin-mvc-example/routes"
+	"github.com/ian0113/go-gin-example/infra"
+	"github.com/ian0113/go-gin-example/routes"
 
 	"github.com/gin-gonic/gin"
 )

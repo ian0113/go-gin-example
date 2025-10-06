@@ -3,8 +3,8 @@ package infra
 import (
 	"fmt"
 
-	"github.com/ian0113/go-gin-mvc-example/config"
-	"github.com/ian0113/go-gin-mvc-example/models"
+	"github.com/ian0113/go-gin-example/config"
+	"github.com/ian0113/go-gin-example/models"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

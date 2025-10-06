@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ian0113/go-gin-mvc-example/infra"
+	"github.com/ian0113/go-gin-example/infra"
 
 	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"

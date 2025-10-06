@@ -1,4 +1,4 @@
-module github.com/ian0113/go-gin-mvc-example
+module github.com/ian0113/go-gin-example
 
 go 1.23.2
 

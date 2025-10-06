@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/ian0113/go-gin-mvc-example/middlewares"
+	"github.com/ian0113/go-gin-example/middlewares"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"

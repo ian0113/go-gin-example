@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ian0113/go-gin-mvc-example/config"
+	"github.com/ian0113/go-gin-example/config"
 
 	"github.com/goccy/go-yaml"
 )

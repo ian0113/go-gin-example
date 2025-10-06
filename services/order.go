@@ -1,9 +1,9 @@
 package services
 
 import (
-	"github.com/ian0113/go-gin-mvc-example/infra"
-	"github.com/ian0113/go-gin-mvc-example/models"
-	"github.com/ian0113/go-gin-mvc-example/repositories"
+	"github.com/ian0113/go-gin-example/infra"
+	"github.com/ian0113/go-gin-example/models"
+	"github.com/ian0113/go-gin-example/repositories"
 
 	"go.uber.org/zap"
 )
